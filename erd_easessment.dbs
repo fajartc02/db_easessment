@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="PostgreSQL" id="Project-1dd1" database="PostgreSQL" >
+	<schema name="public" >
+		<comment><![CDATA[standard public schema]]></comment>
+		<table name="tb_m_categories" row_count="5" >
+			<column name="category_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_m_categories_category_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="uuid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="category_nm" type="varchar" length="30" decimal="0" jt="12" mandatory="y" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<column name="category_desc" type="text" decimal="0" jt="12" />
+			<index name="pk_tb_m_categories" unique="PRIMARY_KEY" >
+				<column name="category_id" />
+			</index>
+		</table>
+		<table name="tb_m_companies" row_count="1" >
+			<column name="company_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_m_company_company_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="uuid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="company_nm" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<index name="pk_tb_m_company" unique="PRIMARY_KEY" >
+				<column name="company_id" />
+			</index>
+		</table>
+		<table name="tb_m_factors" row_count="5" >
+			<column name="factor_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_m_faktors_faktor_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="uuid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="factor_nm" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<index name="pk_tb_m_faktors" unique="PRIMARY_KEY" >
+				<column name="factor_id" />
+			</index>
+		</table>
+		<table name="tb_m_groups" row_count="3" >
+			<column name="group_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_m_group_group_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="uuid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="group_nm" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<index name="pk_tb_m_group" unique="PRIMARY_KEY" >
+				<column name="group_id" />
+			</index>
+		</table>
+		<table name="tb_m_job_types" row_count="2" >
+			<column name="job_type_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_m_job_type_job_type_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="uuid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="job_type_nm" type="varchar" length="255" decimal="0" jt="12" mandatory="y" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<column name="colors" type="varchar" length="20" decimal="0" jt="12" />
+			<index name="pk_tb_m_job_type" unique="PRIMARY_KEY" >
+				<column name="job_type_id" />
+			</index>
+		</table>
+		<table name="tb_m_jobs" row_count="1" >
+			<column name="job_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_m_job_job_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="job_type_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="uuid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="job_nm" type="varchar" length="255" decimal="0" jt="12" mandatory="y" />
+			<column name="attachment" type="text" decimal="0" jt="12" />
+			<column name="pos_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="job_no" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<column name="machine_id" type="integer" jt="4" />
+			<index name="pk_tb_m_job" unique="PRIMARY_KEY" >
+				<column name="job_id" />
+			</index>
+			<fk name="fk_tb_m_job" to_schema="public" to_table="tb_m_job_types" >
+				<fk_column name="job_type_id" pk="job_type_id" />
+			</fk>
+			<fk name="fk_tb_m_jobs_tb_m_machines" to_schema="public" to_table="tb_m_machines" >
+				<fk_column name="machine_id" pk="machine_id" />
+			</fk>
+			<fk name="fk_tb_m_job_pos" to_schema="public" to_table="tb_m_pos" >
+				<fk_column name="pos_id" pk="pos_id" />
+			</fk>
+		</table>
+		<table name="tb_m_judgments" row_count="2" >
+			<column name="judgment_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_m_judgments_judgment_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="uuid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="judgment_nm" type="varchar" length="8" decimal="0" jt="12" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<column name="is_abnormal" type="boolean" length="1" decimal="0" jt="16" mandatory="y" >
+				<defo><![CDATA[false]]></defo>
+			</column>
+			<index name="pk_tb_m_judgments" unique="PRIMARY_KEY" >
+				<column name="judgment_id" />
+			</index>
+		</table>
+		<table name="tb_m_lines" row_count="1" >
+			<column name="line_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_m_lines_line_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="uuid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="line_nm" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="line_desc" type="varchar" length="255" decimal="0" jt="12" />
+			<column name="shop_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="line_snm" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<index name="pk_tb_m_lines" unique="PRIMARY_KEY" >
+				<column name="line_id" />
+			</index>
+			<fk name="fk_tb_m_lines_shop" to_schema="public" to_table="tb_m_shop" >
+				<fk_column name="shop_id" pk="shop_id" />
+			</fk>
+		</table>
+		<table name="tb_m_machines" row_count="3" >
+			<column name="machine_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_m_machines_machine_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="line_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="uuid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="machine_nm" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<column name="op_no" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
+			<index name="pk_tb_m_machines" unique="PRIMARY_KEY" >
+				<column name="machine_id" />
+			</index>
+			<fk name="fk_tb_m_machines_line" to_schema="public" to_table="tb_m_lines" >
+				<fk_column name="line_id" pk="line_id" />
+			</fk>
+		</table>
+		<table name="tb_m_plants" row_count="1" >
+			<column name="plant_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_m_plants_plant_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="company_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="uuid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="plant_nm" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<index name="pk_tb_m_plants" unique="PRIMARY_KEY" >
+				<column name="plant_id" />
+			</index>
+			<fk name="fk_tb_m_plants_company" to_schema="public" to_table="tb_m_companies" >
+				<fk_column name="company_id" pk="company_id" />
+			</fk>
+		</table>
+		<table name="tb_m_pos" row_count="15" >
+			<column name="pos_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_m_pos_pos_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="line_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="uuid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="pos_nm" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<column name="tsk" type="varchar" length="255" decimal="0" jt="12" />
+			<column name="tskk" type="varchar" length="255" decimal="0" jt="12" />
+			<index name="pk_tb_m_pos" unique="PRIMARY_KEY" >
+				<column name="pos_id" />
+			</index>
+			<fk name="fk_tb_m_pos_line" to_schema="public" to_table="tb_m_lines" >
+				<fk_column name="line_id" pk="line_id" />
+			</fk>
+		</table>
+		<table name="tb_m_shop" row_count="3" >
+			<column name="shop_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_m_shop_shop_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="uuid" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="plant_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="shop_nm" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<index name="pk_tb_m_shop" unique="PRIMARY_KEY" >
+				<column name="shop_id" />
+			</index>
+			<fk name="fk_tb_m_shop_plant" to_schema="public" to_table="tb_m_plants" >
+				<fk_column name="plant_id" pk="plant_id" />
+			</fk>
+		</table>
+		<table name="tb_m_tsk" row_count="0" >
+			<column name="tsk_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_m_tsk_tsk_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="uuid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="attachment" type="text" decimal="0" jt="12" mandatory="y" />
+			<column name="pos_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<index name="pk_tb_m_tsk" unique="PRIMARY_KEY" >
+				<column name="tsk_id" />
+			</index>
+			<fk name="fk_tb_m_tsk_tb_m_pos" to_schema="public" to_table="tb_m_pos" >
+				<fk_column name="pos_id" pk="pos_id" />
+			</fk>
+		</table>
+		<table name="tb_m_tskk" row_count="0" >
+			<column name="tskk_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_m_tskk_tskk_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="pos_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="uuid" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="attachment" type="text" decimal="0" jt="12" mandatory="y" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<index name="pk_tb_m_tskk" unique="PRIMARY_KEY" >
+				<column name="tskk_id" />
+			</index>
+			<fk name="fk_tb_m_tskk_tb_m_pos" to_schema="public" to_table="tb_m_pos" >
+				<fk_column name="pos_id" pk="pos_id" />
+			</fk>
+		</table>
+		<table name="tb_m_users" row_count="2" >
+			<column name="user_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_m_users_user_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="uuid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="fullname" type="varchar" length="255" decimal="0" jt="12" mandatory="y" />
+			<column name="noreg" type="varchar" length="10" decimal="0" jt="12" mandatory="y" />
+			<column name="phone_number" type="varchar" length="15" decimal="0" jt="12" />
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="created_by" type="varchar" length="255" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="255" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" />
+			<column name="group_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="password" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="line_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="is_activated" type="boolean" length="1" decimal="0" jt="16" mandatory="y" >
+				<defo><![CDATA[false]]></defo>
+			</column>
+			<index name="pk_tb_m_users" unique="PRIMARY_KEY" >
+				<column name="user_id" />
+			</index>
+			<fk name="fk_tb_m_users_tb_m_group" to_schema="public" to_table="tb_m_groups" >
+				<fk_column name="group_id" pk="group_id" />
+			</fk>
+			<fk name="fk_tb_m_users_tb_m_lines" to_schema="public" to_table="tb_m_lines" >
+				<fk_column name="line_id" pk="line_id" />
+			</fk>
+		</table>
+		<table name="tb_r_obs_checker" row_count="12" >
+			<column name="obs_checker_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_r_obs_checker_obs_checker_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="observation_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="uuid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="checker_nm" type="varchar" length="255" decimal="0" jt="12" mandatory="y" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<index name="pk_tb_r_obs_checker" unique="PRIMARY_KEY" >
+				<column name="obs_checker_id" />
+			</index>
+			<fk name="fk_tb_r_obs_checker" to_schema="public" to_table="tb_r_observations" >
+				<fk_column name="observation_id" pk="observation_id" />
+			</fk>
+		</table>
+		<table name="tb_r_obs_members" row_count="0" >
+			<column name="obs_member_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_r_obs_members_obs_member_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="uuid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="observation_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="member_nm" type="varchar" length="255" decimal="0" jt="12" mandatory="y" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<index name="pk_tb_r_obs_members" unique="PRIMARY_KEY" >
+				<column name="obs_member_id" />
+			</index>
+		</table>
+		<table name="tb_r_obs_results" row_count="10" >
+			<column name="obs_result_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_r_obs_results_obs_result_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="observation_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="uuid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="category_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="factor_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="judgment_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<column name="findings" type="text" decimal="0" jt="12" />
+			<index name="pk_tb_r_obs_results" unique="PRIMARY_KEY" >
+				<column name="obs_result_id" />
+			</index>
+			<fk name="fk_tb_r_obs_results_category" to_schema="public" to_table="tb_m_categories" >
+				<fk_column name="category_id" pk="category_id" />
+			</fk>
+			<fk name="fk_tb_r_obs_results_factor" to_schema="public" to_table="tb_m_factors" >
+				<fk_column name="factor_id" pk="factor_id" />
+			</fk>
+			<fk name="fk_tb_r_obs_results_judg" to_schema="public" to_table="tb_m_judgments" >
+				<fk_column name="judgment_id" pk="judgment_id" />
+			</fk>
+			<fk name="fk_tb_r_obs_results" to_schema="public" to_table="tb_r_observations" >
+				<fk_column name="observation_id" pk="observation_id" />
+			</fk>
+		</table>
+		<table name="tb_r_observations" row_count="6" >
+			<column name="observation_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_r_observations_observation_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="uuid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="plan_check_dt" type="timestamp" decimal="6" jt="93" mandatory="y" />
+			<column name="actual_check_dt" type="timestamp" decimal="6" jt="93" />
+			<column name="pos_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="job_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="group_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<column name="member_nm" type="varchar" length="255" decimal="0" jt="12" mandatory="y" />
+			<index name="pk_tb_r_observations" unique="PRIMARY_KEY" >
+				<column name="observation_id" />
+			</index>
+			<fk name="fk_tb_r_observations_job" to_schema="public" to_table="tb_m_jobs" >
+				<fk_column name="job_id" pk="job_id" />
+			</fk>
+			<fk name="fk_tb_r_observations_tb_m_pos" to_schema="public" to_table="tb_m_pos" >
+				<fk_column name="pos_id" pk="pos_id" />
+			</fk>
+		</table>
+		<table name="tb_r_result_findings" row_count="0" >
+			<column name="result_finding_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo><![CDATA[nextval('tb_r_result_findings_result_finding_id_seq'::regclass)]]></defo>
+			</column>
+			<column name="obs_result_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="uuid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="description" type="text" decimal="0" jt="12" mandatory="y" />
+			<column name="created_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="created_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="changed_by" type="varchar" length="100" decimal="0" jt="12" mandatory="y" >
+				<defo><![CDATA['SYSTEM'::character varying]]></defo>
+			</column>
+			<column name="changed_dt" type="timestamp" decimal="6" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="deleted_by" type="varchar" length="100" decimal="0" jt="12" >
+				<defo><![CDATA[NULL::character varying]]></defo>
+			</column>
+			<column name="deleted_dt" type="timestamp" decimal="6" jt="93" />
+			<index name="pk_tb_r_result_findings" unique="PRIMARY_KEY" >
+				<column name="result_finding_id" />
+			</index>
+			<fk name="fk_tb_r_result_findings" to_schema="public" to_table="tb_r_obs_results" >
+				<fk_column name="obs_result_id" pk="obs_result_id" />
+			</fk>
+		</table>
+		<sequence name="tb_m_categories_category_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_m_company_company_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_m_faktors_faktor_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_m_group_group_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_m_job_job_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_m_job_type_job_type_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_m_judgments_judgment_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_m_lines_line_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_m_machines_machine_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_m_plants_plant_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_m_pos_pos_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_m_shop_shop_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_m_tsk_tsk_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_m_tskk_tskk_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_m_users_user_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_r_obs_checker_obs_checker_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_r_obs_members_obs_member_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_r_obs_results_obs_result_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_r_observations_observation_id_seq" options="START WITH 1 INCREMENT BY 1" />
+		<sequence name="tb_r_result_findings_result_finding_id_seq" options="START WITH 1 INCREMENT BY 1" />
+	</schema>
+	<connector name="PostgreSQL" database="PostgreSQL" driver_class="org.postgresql.Driver" driver_jar="postgresql-42.5.3.jar" driver_desc="Standard" host="localhost" port="5432" instance="easessment" user="postgres" passwd="cG9zdGdyZXM=" useSystemProxy="false" />
+	<layout name="Main Layout" id="Layout-ecf" show_relation="columns" >
+		<entity schema="public" name="tb_m_categories" color="C7F4BE" x="2256" y="80" />
+		<entity schema="public" name="tb_m_companies" color="F4DDBE" x="1792" y="80" />
+		<entity schema="public" name="tb_m_factors" color="C7F4BE" x="2256" y="432" />
+		<entity schema="public" name="tb_m_groups" color="F4DDBE" x="1584" y="800" />
+		<entity schema="public" name="tb_m_job_types" color="BED3F4" x="464" y="480" />
+		<entity schema="public" name="tb_m_jobs" color="BED3F4" x="256" y="416" />
+		<entity schema="public" name="tb_m_judgments" color="C7F4BE" x="2032" y="432" />
+		<entity schema="public" name="tb_m_lines" color="F4DDBE" x="1376" y="80" />
+		<entity schema="public" name="tb_m_machines" color="F4DDBE" x="1168" y="96" />
+		<entity schema="public" name="tb_m_plants" color="F4DDBE" x="1584" y="80" />
+		<entity schema="public" name="tb_m_pos" color="BED3F4" x="256" y="80" />
+		<entity schema="public" name="tb_m_shop" color="F4DDBE" x="1584" y="416" />
+		<entity schema="public" name="tb_m_tsk" color="BED3F4" x="48" y="416" />
+		<entity schema="public" name="tb_m_tskk" color="F4DDBE" x="1792" y="416" />
+		<entity schema="public" name="tb_m_users" color="F4DDBE" x="1360" y="416" />
+		<entity schema="public" name="tb_r_obs_checker" color="BED3F4" x="688" y="80" />
+		<entity schema="public" name="tb_r_obs_members" color="BED3F4" x="912" y="80" />
+		<entity schema="public" name="tb_r_obs_results" color="C7F4BE" x="2032" y="80" />
+		<entity schema="public" name="tb_r_observations" color="BED3F4" x="464" y="80" />
+		<entity schema="public" name="tb_r_result_findings" color="BED3F4" x="688" y="448" />
+		<group name="tb_r_obs_results" color="EEF7EC" >
+			<entity schema="public" name="tb_r_obs_results" />
+			<entity schema="public" name="tb_m_categories" />
+			<entity schema="public" name="tb_m_factors" />
+			<entity schema="public" name="tb_m_judgments" />
+		</group>
+		<group name="tb_m_lines" color="F7F2EC" >
+			<entity schema="public" name="tb_m_lines" />
+			<entity schema="public" name="tb_m_plants" />
+			<entity schema="public" name="tb_m_shop" />
+			<entity schema="public" name="tb_m_users" />
+			<entity schema="public" name="tb_m_machines" />
+			<entity schema="public" name="tb_m_companies" />
+			<entity schema="public" name="tb_m_tskk" />
+			<entity schema="public" name="tb_m_groups" />
+		</group>
+		<group name="tb_m_pos" color="ECF0F7" >
+			<entity schema="public" name="tb_m_pos" />
+			<entity schema="public" name="tb_r_observations" />
+			<entity schema="public" name="tb_r_obs_checker" />
+			<entity schema="public" name="tb_m_job_types" />
+			<entity schema="public" name="tb_m_tsk" />
+			<entity schema="public" name="tb_r_result_findings" />
+			<entity schema="public" name="tb_r_obs_members" />
+			<entity schema="public" name="tb_m_jobs" />
+		</group>
+	</layout>
+	<layout name="~Layout with Sample Tools" id="Layout-541" show_column_type="y" show_relation="columns" >
+		<entity schema="public" name="tb_m_categories" color="C7F4BE" x="2896" y="48" />
+		<entity schema="public" name="tb_m_companies" color="F4DDBE" x="2304" y="48" />
+		<entity schema="public" name="tb_m_factors" color="C7F4BE" x="2896" y="400" />
+		<entity schema="public" name="tb_m_groups" color="F4DDBE" x="2032" y="768" />
+		<entity schema="public" name="tb_m_job_types" color="BED3F4" x="592" y="448" />
+		<entity schema="public" name="tb_m_jobs" color="BED3F4" x="320" y="384" />
+		<entity schema="public" name="tb_m_judgments" color="C7F4BE" x="2624" y="400" />
+		<entity schema="public" name="tb_m_lines" color="F4DDBE" x="1760" y="48" />
+		<entity schema="public" name="tb_m_machines" color="F4DDBE" x="1472" y="64" />
+		<entity schema="public" name="tb_m_plants" color="F4DDBE" x="2032" y="48" />
+		<entity schema="public" name="tb_m_pos" color="BED3F4" x="320" y="48" />
+		<entity schema="public" name="tb_m_shop" color="F4DDBE" x="2032" y="384" />
+		<entity schema="public" name="tb_m_tsk" color="BED3F4" x="48" y="384" />
+		<entity schema="public" name="tb_m_tskk" color="F4DDBE" x="2304" y="384" />
+		<entity schema="public" name="tb_m_users" color="F4DDBE" x="1744" y="384" />
+		<entity schema="public" name="tb_r_obs_checker" color="BED3F4" x="880" y="48" />
+		<entity schema="public" name="tb_r_obs_members" color="BED3F4" x="1152" y="48" />
+		<entity schema="public" name="tb_r_obs_results" color="C7F4BE" x="2624" y="48" />
+		<entity schema="public" name="tb_r_observations" color="BED3F4" x="592" y="48" />
+		<entity schema="public" name="tb_r_result_findings" color="BED3F4" x="880" y="416" />
+		<script name="SQL Editor" id="Editor-107c" language="SQL" >
+			<string><![CDATA[SELECT
+	pos_id, line_id, uuid, pos_nm, created_by, created_dt, changed_by, changed_dt, deleted_by, deleted_dt, tsk, tskk
+FROM
+	"public".tb_m_pos s;]]></string>
+		</script>
+		<browser id="Browse-750" name="Relational Data Explorer" confirm_updates="y" >
+			<browse_table schema="public" entity="tb_m_pos" x="20" y="20" width="400" height="300" >
+				<browse_table schema="public" entity="tb_m_jobs" fk="fk_tb_m_job_pos" x="440" y="20" width="500" height="350" >
+					<browse_table schema="public" entity="tb_r_observations" fk="fk_tb_r_observations_job" x="960" y="20" width="500" height="350" />
+				</browse_table>
+			</browse_table>
+		</browser>
+		<query id="Query-22cf" name="Query Builder" >
+			<query_table schema="public" name="tb_m_pos" alias="tmp" x="48" y="48" >
+				<column name="pos_id" />
+				<column name="line_id" />
+				<column name="uuid" />
+				<column name="pos_nm" />
+				<column name="created_by" />
+				<column name="created_dt" />
+				<column name="changed_by" />
+				<column name="changed_dt" />
+				<column name="deleted_by" />
+				<column name="deleted_dt" />
+				<column name="tsk" />
+				<column name="tskk" />
+				<query_table schema="public" name="tb_m_jobs" alias="tmj" x="256" y="48" fk="fk_tb_m_job_pos" type="Inner Join" >
+					<column name="job_id" />
+					<column name="job_type_id" />
+					<column name="uuid" />
+					<column name="job_nm" />
+					<column name="attachment" />
+					<column name="pos_id" />
+					<column name="job_no" />
+					<column name="created_by" />
+					<column name="created_dt" />
+					<column name="changed_by" />
+					<column name="changed_dt" />
+					<column name="deleted_by" />
+					<column name="deleted_dt" />
+					<column name="machine_id" />
+					<query_table schema="public" name="tb_r_observations" alias="tro" x="464" y="48" fk="fk_tb_r_observations_job" type="Inner Join" >
+						<column name="observation_id" />
+						<column name="uuid" />
+						<column name="plan_check_dt" />
+						<column name="actual_check_dt" />
+						<column name="pos_id" />
+						<column name="job_id" />
+						<column name="group_id" />
+						<column name="created_by" />
+						<column name="created_dt" />
+						<column name="changed_by" />
+						<column name="changed_dt" />
+						<column name="deleted_by" />
+						<column name="deleted_dt" />
+						<column name="member_nm" />
+					</query_table>
+				</query_table>
+			</query_table>
+		</query>
+		<form name="Report" id="Report-103f" template="Page" css="container-fluid" view="frame" >
+			<var name="samplePageNumber" type="4" value="0" mandatory="n" />
+			<var name="sampleRecordsPerPage" type="4" value="100" mandatory="n" />
+			<body name="Body" template="Grid" pos="0,0,0,0,f,f" layout="{{-2,-2,-2,-2,-1},{-2,-2,-2,-2}}" scroll="n" html="n" >
+				<cell type="label" name="Tb_m_pos Data" template="H3" pos="0,0,1,0,l,c" />
+				<cell type="chart" name="Pie" template="Pie" pos="0,1,4,1,l,c" max_records="20" >
+					<form_script type="DataSource" language="SQL" >
+						<var name="pos_id" type="4" />
+						<var name="line_id" type="4" />
+						<var name="uuid" />
+						<var name="pos_nm" />
+						<var name="created_by" />
+						<var name="created_dt" type="93" />
+						<var name="changed_by" />
+						<var name="changed_dt" type="93" />
+						<var name="deleted_by" />
+						<var name="deleted_dt" type="93" />
+						<var name="tsk" />
+						<var name="tskk" />
+						<script ><![CDATA[SELECT * FROM "public".tb_m_pos]]></script>
+					</form_script>
+					<param name="i0" value="changed_by" />
+					<param name="width" value="100%" />
+					<param name="v0" value="line_id" />
+					<param name="title" value="Sample Chart" />
+					<param name="height" value="400px" />
+				</cell>
+				<tableview name="sample" template="Table" css="table table-striped table-sm table-hover" pos="0,2,4,2,f,f" layout="{{-2,-2,-2,-2,-2,-2,-2},{-2,-2}}" scroll="n" html="n" header_rows="1" >
+					<form_script type="DataSource" language="SQL" >
+						<var name="pos_id" type="4" />
+						<var name="line_id" type="4" />
+						<var name="uuid" />
+						<var name="pos_nm" />
+						<var name="created_by" />
+						<var name="created_dt" type="93" />
+						<var name="changed_by" />
+						<var name="changed_dt" type="93" />
+						<var name="deleted_by" />
+						<var name="deleted_dt" type="93" />
+						<var name="tsk" />
+						<var name="tskk" />
+						<script ><![CDATA[SELECT * FROM "public".tb_m_pos]]></script>
+					</form_script>
+					<cell type="label" name="pos_id" pos="0,0,0,0,c,c" />
+					<cell type="label" name="line_id" pos="1,0,1,0,c,c" />
+					<cell type="label" name="uuid" pos="2,0,2,0,c,c" />
+					<cell type="label" name="pos_nm" pos="3,0,3,0,c,c" />
+					<cell type="label" name="created_by" pos="4,0,4,0,c,c" />
+					<cell type="label" name="created_dt" pos="5,0,5,0,c,c" />
+					<cell type="label" name="Button can open other pages." pos="6,0,6,0,c,c" />
+					<cell type="label" name="${pos_id}" template="Plain" pos="0,1,0,1,l,c" />
+					<cell type="label" name="${line_id}" template="Plain" pos="1,1,1,1,l,c" />
+					<cell type="label" name="${uuid}" template="Plain" pos="2,1,2,1,l,c" />
+					<cell type="label" name="${pos_nm}" template="Plain" pos="3,1,3,1,l,c" />
+					<cell type="label" name="${created_by}" template="Plain" pos="4,1,4,1,l,c" />
+					<cell type="label" name="${created_dt}" template="Plain" pos="5,1,5,1,l,c" />
+					<cell type="button" name="More" template="Plain" css="btn btn-sm btn-secondary" pos="6,1,6,1,c,c" ref_id="Report-103f" />
+				</tableview>
+				<cell type="href" name="" disabled="${samplePageNumber&lt;1}" pos="0,3,0,3,l,c" glyph="bi-chevron_double_left" ref_id="Report-103f" >
+					<var name="samplePageNumber" value="0" />
+				</cell>
+				<cell type="href" name="" disabled="${samplePageNumber&lt;1}" pos="1,3,1,3,l,c" glyph="bi-chevron_left" ref_id="Report-103f" >
+					<var name="samplePageNumber" value="${Math.max(0,samplePageNumber-1)}" />
+				</cell>
+				<cell type="label" name="Page ${samplePageNumber+1}" pos="2,3,2,3,l,c" />
+				<cell type="href" name="" disabled="${!sampleHasNextPage}" pos="3,3,3,3,l,c" glyph="bi-chevron_right" ref_id="Report-103f" >
+					<var name="samplePageNumber" value="${( samplePageNumber+1 )}" />
+				</cell>
+			</body>
+		</form>
+	</layout>
+</project>
